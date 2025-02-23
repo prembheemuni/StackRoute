@@ -31,7 +31,7 @@ db.students.insertOne({name : 'Ranjith',age:25, average : 9.72, fullTime:false, 
 ```
 
 
-### Sorting and limiting
+### Sorting and limiting and skipping
 
  - `sort` chaining to find method. `-1` for desc `1` for asc
  ```
@@ -41,6 +41,8 @@ db.students.insertOne({name : 'Ranjith',age:25, average : 9.72, fullTime:false, 
  
  ```
     db.students.sort({name : -1}).limit(1)
+    db.orders.find().skip(5).limit(5)  // Skip the first 5 and return the next 5
+
  ```
 
 
@@ -129,3 +131,9 @@ db.students.find({age : {$not : {lt : 20}}})
 - `db.createCollection('teachers',{capped:true, size:1000000,max:100})` for limiting the size of collection and max number of records
 - `db.createCollection('teachers',{capped:true,size:100000,max:100},{autoIndexId : false})` prevents creating index of id automatically. this is one of the performance increasing measure of write performance.
 - `db.teachers.drop()` to drop a collection
+
+
+### Counting
+
+- `db.orders.countDocuments()` total count
+- `db.orders.countDocuments({name : 'prem'})` first find then count
