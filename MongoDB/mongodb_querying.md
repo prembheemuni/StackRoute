@@ -22,13 +22,20 @@ db.orders.find().sort({ customer: 1, total: -1 })  // Sort by 'customer' ascendi
 db.orders.find().skip(5).limit(5)  // Skip the first 5 and return the next 5
 
 
+// for arrays
+db.orders.find({items : {$size : 3}})
+
+db.orders.aggregate([{$match : {items : {$size : 3}}}])
+
+
+
+
 
 ```
 
-
 ### Projections
-- projections will take 0 , 1 , true, false and can also perform substract and addition
 
+- projections will take 0 , 1 , true, false and can also perform substract and addition
 
 ```
 db.orders.find({}, {
