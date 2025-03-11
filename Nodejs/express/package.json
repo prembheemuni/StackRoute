@@ -1,7 +1,7 @@
 {
-  "name": "stackroute",
+  "name": "express",
   "version": "1.0.0",
-  "description": "StackRoute Learnings",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
   "devDependencies": {
-    "nodemon": "^3.1.9",
-    "typescript": "^5.7.3"
+    "nodemon": "^3.1.9"
   }
 }
